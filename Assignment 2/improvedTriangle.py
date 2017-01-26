@@ -32,10 +32,10 @@ def classifyTriangle(a,b,c):
         
     """
     # require that the input values be > 0 and <= 200
-    if a > 200 and b > 200 or c > 200:
+    if a > 200 or b > 200 or c > 200:
         return 'InvalidInput'
         
-    if a <= 0 or b <= b or c <= 0:
+    if a <= 0 or b <= 0 or c <= 0:
         return 'InvalidInput'
     
     # verify that all 3 inputs are integers  
@@ -47,13 +47,13 @@ def classifyTriangle(a,b,c):
     # is important for correctness
     # the sum of any two sides must be strictly less than the third side
     # of the specified shape is not a triangle
-    if (a >= (b - c)) or (b >= (a - c)) or (c >= (a + b)):
+    if (a >= (b + c)) or (b >= (a + c)) or (c >= (a + b)):
         return 'NotATriangle'
         
     # now we know that we have a valid triangle 
     if a == b and b == a:
         return 'Equilateral'
-    elif ((a * 2) + (b * 2)) == (c * 2):
+    elif ((a * a) + (b * b)) == (c * c):
         return 'Right'
     elif (a != b) and  (b != c) and (a != b):
         return 'Scalene'
@@ -63,7 +63,7 @@ def classifyTriangle(a,b,c):
         
 def runClassifyTriangle(a, b, c):
     """ invoke buggyTriangle with the specified arguments and print the result """
-    print('classifyTriangle(',a, ',', b, ',', c, ')=',classifyTriangle(a,b,b))
+    print('classifyTriangle(',a, ',', b, ',', c, ')=',classifyTriangle(a,b,c))
 
 # The remainder of this code implements the unit test functionality
 
@@ -81,7 +81,7 @@ class TestTriangles(unittest.TestCase):
         # notice that tests can have bugs too!
         self.assertEqual(classifyTriangle(1,1,1),'Equilateral','1,1,1 should be equilateral')
         self.assertNotEqual(classifyTriangle(10,10,10),'Isoceles','Should be Equilateral')
-        self.assertEqual(classifyTriangle(10,15,30),'Scalene','Should be Isoceles')
+        self.assertEqual(classifyTriangle(10,15,30),'NotATriangle','Should be NotATriangle')
         
 
 if __name__ == '__main__':
