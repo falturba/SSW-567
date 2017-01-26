@@ -82,7 +82,12 @@ class TestTriangles(unittest.TestCase):
         self.assertEqual(classifyTriangle(1,1,1),'Equilateral','1,1,1 should be equilateral')
         self.assertNotEqual(classifyTriangle(10,10,10),'Isoceles','Should be Equilateral')
         self.assertEqual(classifyTriangle(10,15,30),'NotATriangle','Should be NotATriangle')
-        
+
+    def testInvalidInputs(self):
+        self.assertEqual(classifyTriangle(0,0,0),'InvalidInput','Should be NotATriangle')
+        self.assertEqual(classifyTriangle(-1,-2,5),'InvalidInput','Should be NotATriangle')
+        self.assertEqual(classifyTriangle(1000,2,5),'InvalidInput','Should be NotATriangle')
+
 
 if __name__ == '__main__':
     # examples of running the  code
