@@ -98,9 +98,6 @@ class TestTriangles(unittest.TestCase):
         self.assertEqual(classifyTriangle(3, 3, 3), 'Equilateral', 'Should be Equilateral')
         self.assertEqual(classifyTriangle(200, 200, 200), 'Equilateral', 'Should be Equilateral')
 
-    def testClassifyTriangleEquilateral(self):
-        self.assertEqual(classifyTriangle(3, 3, 3), 'Equilateral', 'Should be Equilateral')
-        self.assertEqual(classifyTriangle(200, 200, 200), 'Equilateral', 'Should be Equilateral')
 
     def testClassifyTriangleScalene(self):
         self.assertEqual(classifyTriangle(36,67,32), 'Scalene', 'Should be Scalene')
