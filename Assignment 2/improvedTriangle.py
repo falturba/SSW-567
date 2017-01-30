@@ -96,6 +96,7 @@ class TestTriangles(unittest.TestCase):
 
     def testClassifyTriangleEquilateral(self):
         self.assertEqual(classifyTriangle(3, 3, 3), 'Equilateral', 'Should be Equilateral')
+        self.assertEqual(classifyTriangle(5, 5, 5), 'Equilateral', 'Should be Equilateral')
         self.assertEqual(classifyTriangle(200, 200, 200), 'Equilateral', 'Should be Equilateral')
 
 
@@ -107,6 +108,7 @@ class TestTriangles(unittest.TestCase):
         self.assertEqual(classifyTriangle(1, 100, 100), 'Isoceles', 'Should be Isoceles')
         self.assertEqual(classifyTriangle(100, 1, 100), 'Isoceles', 'Should be Isoceles')
         self.assertEqual(classifyTriangle(100, 100, 1), 'Isoceles', 'Should be Isoceles')
+        self.assertEqual(classifyTriangle(5, 5, 1), 'Isoceles', 'Should be Isoceles')
 
 
 if __name__ == '__main__':
@@ -118,7 +120,3 @@ if __name__ == '__main__':
     print('Begin UnitTest')
     unittest.main(exit=False) # this runs all of the tests - use this line if running from Spyder
     #unittest.main(exit=True) # this runs all of the tests - use this line if running from the command line
-    
-    
-       
-       
