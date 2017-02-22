@@ -9,7 +9,7 @@ Note that this code includes intentional errors for you to find.
 """
 import unittest     # this makes Python unittest module available
 
-def classify_triangle(side1,side2,side3):
+def classify_triangle(side1 ,side2 ,side3):
     """
     This function returns a string with the type of triangle from three integer values
     corresponding to the lengths of the three sides of the Triangle.
@@ -67,46 +67,46 @@ class TestTriangles(unittest.TestCase):
     def test_classify_triangle1(self): # test invalid inputs
         """From Professor's TestCase"""
         # your tests go here.  Include as many tests as you'd like
-        self.assertEqual(classify_triangle(3,4,5),'Right','3,4,5 is a Right triangle')
+        self.assertEqual(classify_triangle(3, 4, 5),'Right','3,4,5 is a Right triangle')
 
     def test_invalid_inputs(self):
         """Test Invalid and Not Triangle"""
-        self.assertEqual(classify_triangle(0,0,0),'InvalidInput','Should be NotATriangle')
-        self.assertEqual(classify_triangle(-1,-2,5),'InvalidInput','Should be NotATriangle')
-        self.assertEqual(classify_triangle(1000,2,5),'InvalidInput','Should be NotATriangle')
-        self.assertEqual(classify_triangle(10,15,30),'NotATriangle','Should be NotATriangle')
+        self.assertEqual(classify_triangle(0, 0, 0),'InvalidInput','Should be NotATriangle')
+        self.assertEqual(classify_triangle(-1, -2, 5),'InvalidInput','Should be NotATriangle')
+        self.assertEqual(classify_triangle(1000, 2, 5),'InvalidInput','Should be NotATriangle')
+        self.assertEqual(classify_triangle(10, 15, 30),'NotATriangle','Should be NotATriangle')
 
     def test_classify_triangle_right(self):
         """Test Right Triangle"""
-        self.assertEqual(classify_triangle(3,4,5),'Right','Should be Right')
-        self.assertEqual(classify_triangle(5,12,13),'Right','Should be Right')
-        self.assertEqual(classify_triangle(7,24,25),'Right','Should be Right')
-        self.assertEqual(classify_triangle(65,72,97),'Right','Should be Right')
+        self.assertEqual(classify_triangle(3, 4, 5),'Right','Should be Right')
+        self.assertEqual(classify_triangle(5, 12, 13),'Right','Should be Right')
+        self.assertEqual(classify_triangle(7, 24, 25),'Right','Should be Right')
+        self.assertEqual(classify_triangle(65, 72 , 97),'Right','Should be Right')
 
     def test_classify_triangle_equil(self):
         """Test Equilateral"""
-        self.assertEqual(classify_triangle(3,3,3),'Equilateral','Should be Equilateral')
-        self.assertEqual(classify_triangle(200,200,200),'Equilateral','Should be Equilateral')
-        self.assertEqual(classify_triangle(1,1,1),'Equilateral','1,1,1 should be equilateral')
-        self.assertEqual(classify_triangle(10,10,10),'Equilateral','Should be Equilateral')
+        self.assertEqual(classify_triangle(3, 3, 3),'Equilateral','Should be Equilateral')
+        self.assertEqual(classify_triangle(200, 200, 200),'Equilateral','Should be Equilateral')
+        self.assertEqual(classify_triangle(1, 1, 1),'Equilateral','1,1,1 should be equilateral')
+        self.assertEqual(classify_triangle(10, 10, 10),'Equilateral','Should be Equilateral')
 
     def test_classify_triangle_scalene(self):
         """Test Scalene"""
-        self.assertEqual(classify_triangle(36,67,32),'Scalene','Should be Scalene')
-        self.assertEqual(classify_triangle(199,198,2),'Scalene','Should be Scalene')
+        self.assertEqual(classify_triangle(36, 67, 32),'Scalene','Should be Scalene')
+        self.assertEqual(classify_triangle(199, 198, 2),'Scalene','Should be Scalene')
 
     def test_classify_triangle_isoceles(self):
         """Test Isoceles"""
-        self.assertEqual(classify_triangle(1,100,100),'Isoceles','Should be Isoceles')
-        self.assertEqual(classify_triangle(100,1,100),'Isoceles','Should be Isoceles')
-        self.assertEqual(classify_triangle(100,100,1),'Isoceles','Should be Isoceles')
+        self.assertEqual(classify_triangle(1, 100, 100),'Isoceles','Should be Isoceles')
+        self.assertEqual(classify_triangle(100, 1, 100),'Isoceles','Should be Isoceles')
+        self.assertEqual(classify_triangle(100, 100, 1),'Isoceles','Should be Isoceles')
 
 
 if __name__ == '__main__':
     # examples of running the  code
-    run_classify_triangle(1,2,3)
-    run_classify_triangle(1,1,1)
-    run_classify_triangle(3,4,5)
+    run_classify_triangle(1, 2, 3)
+    run_classify_triangle(1, 1, 1)
+    run_classify_triangle(3, 4, 5)
     print 'Begin UnitTest'
     # this runs all of the tests - use this line if running from Spyder
     unittest.main(exit=False)
