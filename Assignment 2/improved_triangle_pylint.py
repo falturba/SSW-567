@@ -81,7 +81,7 @@ class TestTriangles(unittest.TestCase):
         self.assertEqual(classify_triangle(3, 4, 5), 'Right', 'Should be Right')
         self.assertEqual(classify_triangle(5, 12, 13), 'Right', 'Should be Right')
         self.assertEqual(classify_triangle(7, 24, 25), 'Right', 'Should be Right')
-        self.assertEqual(classify_triangle(65, 72 , 97), 'Right', 'Should be Right')
+        self.assertEqual(classify_triangle(65, 72, 97), 'Right', 'Should be Right')
 
     def test_classify_triangle_equil(self):
         """Test Equilateral"""
